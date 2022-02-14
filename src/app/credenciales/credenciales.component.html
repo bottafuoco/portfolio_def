@@ -1,0 +1,13 @@
+<div >
+  <div *ngIf="personas!=null; else espera">
+    <ul>
+      <li *ngFor="let art of personas.info2.results;">
+        <img src= {{art.picture.large}} width="30%">
+        <br><br>
+        Utente: {{art.login.username}}     Password: {{art.login.password}}
+      </li>
+    </ul>
+  </div>
+  <ng-template #espera>Caricando datti...</ng-template>
+</div>
+

@@ -1,0 +1,15 @@
+<div >
+  <div *ngIf="personas!=null; else espera">
+    <ul>
+      <li *ngFor="let art of personas.info2.results;" style="font-size:30px">
+        <img src= {{art.picture.large}} width="30%">
+        <br><br>
+          Sono <span *ngIf = "art.gender=='female';else masculino"  > nata il: </span> {{art.dob.date | date:'d/M/y'}}
+        <ng-template #masculino>nato il</ng-template>
+
+      </li>
+    </ul>
+  </div>
+  <ng-template #espera>Caricando datti...</ng-template>
+</div>
+

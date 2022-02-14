@@ -1,0 +1,12 @@
+<div >
+  <div *ngIf="personas!=null; else espera">
+    <ul>
+      <li *ngFor="let art of personas.info2.results;">
+        <img src= {{art.picture.large}} width="30%">
+        <br><br>
+        Indirizzo:<br><br>{{art.location.city}}, {{art.location.street.name}}, {{art.location.state}}, {{art.location.country}}
+      </li>
+    </ul>
+  </div>
+  <ng-template #espera>Caricando datti...</ng-template>
+</div>
